@@ -8,7 +8,10 @@ public class Collectables : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Invoke("DestroyCollectables", 0.2f);
+            //add score by usibg scoremanager script
+            ScoreManeger.instance.AddScore(1);
+            //this code is used for destroy the collectable obj. and float is used to control time
+            Invoke("DestroyCollectables", 0.1f);
         }
     }
 
