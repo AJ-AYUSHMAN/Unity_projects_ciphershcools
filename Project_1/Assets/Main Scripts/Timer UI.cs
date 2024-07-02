@@ -8,7 +8,7 @@ public class TimerUI : MonoBehaviour
     
     public CollactableManager CollactableManager;
     // Start is called before the first frame update
-    public float timervalue = 60f;
+    public float timervalue = 90f;
     public bool isTimerRunning =false;
     public float currentTime;
 

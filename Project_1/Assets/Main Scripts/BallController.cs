@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public float speed;
+    private string tag_wall = "Wall";
     // Update is called once per frame
     void Update()
     {
@@ -17,5 +18,13 @@ public class BallController : MonoBehaviour
 
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce (movement);
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == tag_wall)
+        {
+            Debug.Log("Ball is collided with Wall");
+            ScoreManeger.instance.AddScore(-1);
+        }
     }
 }
